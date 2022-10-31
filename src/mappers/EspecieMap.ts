@@ -16,11 +16,11 @@ export const especieMapper = ({
     name,
     classification,
     designation,
-    average_height,
+    +average_height,
     skin_colors,
     hair_colors,
     eye_colors,
-    average_lifespan,
+    +average_lifespan,
     language
   )
   return especie
