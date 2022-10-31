@@ -47,6 +47,7 @@ export const structure =
           message: 'La operación se realizó con éxito'
         })
       } catch (error) {
+        console.error(error)
         if (error instanceof Error) {
           return formatJSONResponse({
             data: null,
