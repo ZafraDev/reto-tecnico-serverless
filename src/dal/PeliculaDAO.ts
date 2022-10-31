@@ -3,7 +3,7 @@ import database from '../config/database'
 import PeliculaDTO from '../dto/PeliculaDTO'
 import { peliculaMapper } from '../mappers/PeliculaMap'
 
-const tableName = 'peliculas'
+const tableName = process.env.PELICULAS_TABLE ?? ''
 
 export const obtenerPeliculas = async (): Promise<PeliculaDTO[]> => {
   const params = {
