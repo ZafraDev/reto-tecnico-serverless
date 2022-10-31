@@ -54,6 +54,7 @@ functions:
           method: get
 
 plugins:
+  - serverless-auto-swagger
   - serverless-dotenv-plugin
   - serverless-esbuild
   - serverless-offline
@@ -78,3 +79,5 @@ custom:
   esbuild:
     bundle: true
     minify: true
+  autoswagger:
+    generateSwaggerOnDeploy: false
