@@ -27,7 +27,7 @@ provider:
 functions:
   # consulta al servicio SWAPI
   buscarEspecies:
-    handler: src/functions/buscarEspecies.handler
+    handler: src/functions/especies/buscarEspecies.handler
     events:
       - httpApi:
           path: /especies
@@ -35,19 +35,19 @@ functions:
 
   # usa dynamodb
   grabarPelicula:
-    handler: src/functions/grabarPelicula.handler
+    handler: src/functions/peliculas/grabarPelicula.handler
     events:
       - httpApi:
           path: /peliculas
           method: post
   obtenerPeliculaPorID:
-    handler: src/functions/obtenerPeliculaPorID.handler
+    handler: src/functions/peliculas/obtenerPeliculaPorID.handler
     events:
       - httpApi:
           path: /peliculas/{id}
           method: get
   obtenerPeliculas:
-    handler: src/functions/obtenerPeliculas.handler
+    handler: src/functions/peliculas/obtenerPeliculas.handler
     events:
       - httpApi:
           path: /peliculas

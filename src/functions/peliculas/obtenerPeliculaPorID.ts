@@ -1,7 +1,7 @@
-import { structure } from './../libs/lambda'
+import { structure } from '../../libs/lambda'
 import { APIGatewayProxyEvent } from 'aws-lambda'
-import PeliculaDTO from '../dto/PeliculaDTO'
-import { obtenerPeliculaService } from '../service/PeliculaService'
+import PeliculaDTO from '../../dto/PeliculaDTO'
+import { obtenerPeliculaService } from '../../service/PeliculaService'
 
 export const handler = structure(
   async (event: APIGatewayProxyEvent): Promise<PeliculaDTO> => {
