@@ -4,7 +4,7 @@ frameworkVersion: '3'
 package:
   individually: true
 
-dotEnv: true
+useDotenv: true
 
 provider:
   name: aws
@@ -54,6 +54,7 @@ functions:
           method: get
 
 plugins:
+  - serverless-dotenv-plugin
   - serverless-esbuild
   - serverless-offline
 
@@ -77,4 +78,3 @@ custom:
   esbuild:
     bundle: true
     minify: true
-
