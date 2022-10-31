@@ -2,7 +2,6 @@
 
 Reto Tecnico Indra usando Nodejs y Serverless
 
-* [Ver Demo final](https://8ojagcyt0i.execute-api.us-east-1.amazonaws.com)
 * [Ver Documentación del API](https://8ojagcyt0i.execute-api.us-east-1.amazonaws.com/swagger)
 
 ## Acerca del Proyecto
