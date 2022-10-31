@@ -1,0 +1,73 @@
+service: RetoTecnicoIndra
+frameworkVersion: '3'
+
+package:
+  individually: true
+
+dotEnv: true
+
+provider:
+  name: aws
+  runtime: 'nodejs14.x'
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: 
+        - arn:aws:dynamodb:us-east-1:859674087852:table/PeliculasTable
+
+functions:
+  # consulta al servicio SWAPI
+  buscarEspecies:
+    handler: src/functions/buscarEspecies.handler
+    events:
+      - httpApi:
+          path: /especies
+          method: get
+
+  # usa dynamodb
+  grabarPelicula:
+    handler: src/functions/grabarPelicula.handler
+    events:
+      - httpApi:
+          path: /peliculas
+          method: post
+  obtenerPeliculaPorID:
+    handler: src/functions/obtenerPeliculaPorID.handler
+    events:
+      - httpApi:
+          path: /peliculas/{id}
+          method: get
+  obtenerPeliculas:
+    handler: src/functions/obtenerPeliculas.handler
+    events:
+      - httpApi:
+          path: /peliculas
+          method: get
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+resources:
+  Resources:
+    PeliculasTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: PeliculasTable
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+
