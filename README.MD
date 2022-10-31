@@ -20,7 +20,7 @@ El Proyecto consiste en crear al menos 2 endpoints basicos para crear y listar d
 ### Requerimientos
 
 * [Instalar Serverless Framework](https://www.serverless.com/framework/docs/getting-started)
-* [Configurar tus credenciales de AWS](https://www.serverless.com/framework/docs/providers/aws/guide/credentials)
+* [Configurar tus credenciales de AWS](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
 
 ### Instalación
 
